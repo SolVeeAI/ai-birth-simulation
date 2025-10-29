@@ -28,19 +28,3 @@ dist-ssr
 .env.local
 .env.production
 .env.*.local
-
-# Documentation (keep only README.md)
-*.md
-!README.md
-
-# Setup scripts (may contain sensitive patterns)
-setup-*.sh
-ENV_SETUP*.md
-
-# Test files
-TestDatabase.jsx
-databaseTest.js
-
-# Build outputs
-dist/
-build/
