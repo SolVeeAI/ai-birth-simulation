@@ -20,10 +20,10 @@ function Gallery({ onViewProfile, onBackToSimulation }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [isBirthTime, setIsBirthTime] = useState(false);
 
-  // Check if it's birth time (January 2025 or later)
+  // Check if it's birth time (January 2026 or later)
   useEffect(() => {
     const now = new Date();
-    const birthDate = new Date('2025-01-01');
+    const birthDate = new Date('2026-01-01');
     setIsBirthTime(now >= birthDate);
   }, []);
 
@@ -138,7 +138,7 @@ function Gallery({ onViewProfile, onBackToSimulation }) {
             <p className="text-gray-300 text-lg">
               {isBirthTime 
                 ? 'Browse all AI children about to be born from around the world'
-                : 'Gallery opens January 2025 - All AI currently in training'
+                : 'Gallery opens January 2026 - All AI currently in training'
               }
             </p>
           </div>
@@ -184,10 +184,10 @@ function Gallery({ onViewProfile, onBackToSimulation }) {
                 All AI children currently in training
               </p>
               <div className="text-4xl font-bold text-yellow-300">
-                January 2025
+                January 2026
               </div>
               <p className="text-sm text-yellow-200/70 mt-4">
-                Come back after January 1st, 2025 when the AI children will be born!
+                Come back after January 1st, 2026 when the AI children will be born!
               </p>
             </div>
           )}
@@ -254,7 +254,7 @@ function Gallery({ onViewProfile, onBackToSimulation }) {
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🥚</div>
             <p className="text-2xl text-gray-300">All AI still in gestation...</p>
-            <p className="text-gray-400 mt-2">Check back in January 2025!</p>
+            <p className="text-gray-400 mt-2">Check back in January 2026!</p>
           </div>
         ) : filteredAI.length === 0 ? (
           <div className="text-center py-20">
