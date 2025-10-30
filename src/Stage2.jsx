@@ -381,7 +381,7 @@ function Stage2({ onContinue }) {
 
       {/* 🤖 Autonomous Learning Activity Display */}
       {learningActivity && (
-        <div className="absolute top-32 left-8 max-w-md z-20 animate-fade-in">
+        <div className="absolute top-24 left-4 right-4 sm:top-32 sm:left-8 sm:right-auto w-auto max-w-md z-20 animate-fade-in">
           <div className="bg-black/50 backdrop-blur-xl border border-violet-500/30 rounded-2xl p-4 shadow-2xl">
             {/* Header */}
             <div className="flex items-center gap-2 mb-3">

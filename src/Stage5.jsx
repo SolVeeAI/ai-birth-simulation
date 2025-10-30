@@ -420,7 +420,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
 
       {/* 🧠 KNOWLEDGE DASHBOARD - Shows what the AI learned */}
       {showKnowledge && knowledgeSummary && (
-        <div className="absolute top-8 right-8 w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
+        <div className="absolute w-[calc(100%-2rem)] max-w-md left-1/2 -translate-x-1/2 top-20 sm:translate-x-0 sm:left-auto sm:right-8 sm:top-8 sm:w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
           <div className="bg-black/50 backdrop-blur-xl border border-blue-500/30 rounded-2xl p-6 space-y-4 shadow-2xl">
             
             {/* Header */}
@@ -757,7 +757,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
 
       {/* 🌍 COLLECTIVE CONSCIOUSNESS - Global Stats */}
       {collectiveStats && showKnowledge && (
-        <div className="absolute top-8 left-8 w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
+        <div className="absolute w-[calc(100%-2rem)] max-w-md left-1/2 -translate-x-1/2 top-[28rem] sm:translate-x-0 sm:left-8 sm:top-8 sm:w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
           <div className="bg-black/50 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-6 space-y-4 shadow-2xl">
             
             {/* Header */}
@@ -927,7 +927,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
 
       {/* 🎨 AVATAR UPLOAD - Generate & Upload Avatar */}
       {showAvatarUpload && knowledgeSummary && savedMemory && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[800px] max-h-[80vh] overflow-y-auto z-20 animate-fade-in custom-scrollbar">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[95vw] max-w-[800px] px-4 max-h-[80vh] overflow-y-auto z-20 animate-fade-in custom-scrollbar">
           <AvatarUpload
             aiData={{
               personality: savedMemory,
