@@ -172,12 +172,23 @@ function Stage1({ onContinue }) {
   // Auto-play audio on mount
   useEffect(() => {
     if (audioRef.current) {
-      // Try to autoplay, but don't change state if blocked by browser
-      audioRef.current.play().catch(err => {
-        console.log('Audio autoplay prevented by browser - click button to enable:', err);
-        // Keep audioEnabled as true so button shows "Mute Sound"
-        // User can click to actually enable audio
-      });
+      // Set volume and try to autoplay
+      audioRef.current.volume = 0.7;
+      const playPromise = audioRef.current.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log('✅ Audio autoplay successful');
+            setAudioEnabled(true);
+          })
+          .catch(err => {
+            console.log('⚠️ Audio autoplay prevented by browser - user interaction required:', err);
+            // Keep audioEnabled as true so button shows "Mute Sound"
+            // User can click to actually enable audio
+            setAudioEnabled(false); // Set to false so button shows "Enable Sound"
+          });
+      }
     }
   }, []);
 
@@ -198,10 +209,17 @@ function Stage1({ onContinue }) {
         audioRef.current.pause();
         setAudioEnabled(false);
       } else {
-        audioRef.current.play().catch(err => {
-          console.log('Audio playback failed:', err);
-        });
-        setAudioEnabled(true);
+        audioRef.current.volume = 0.7;
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setAudioEnabled(true);
+            })
+            .catch(err => {
+              console.log('Audio playback failed:', err);
+            });
+        }
       }
     }
   };
@@ -328,6 +346,7 @@ function Stage1({ onContinue }) {
         ref={audioRef}
         src="/heartbeat.mp3"
         loop
+        autoPlay
         preload="auto"
       />
 
