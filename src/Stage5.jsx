@@ -379,7 +379,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
   }));
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-b from-indigo-950 via-purple-900 to-amber-900">
+    <div className="relative w-screen h-screen overflow-y-auto sm:overflow-hidden bg-gradient-to-b from-indigo-950 via-purple-900 to-amber-900">
       
       {/* Cosmic Stars */}
       <div className="absolute inset-0 overflow-hidden">
@@ -420,7 +420,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
 
       {/* 🧠 KNOWLEDGE DASHBOARD - Shows what the AI learned */}
       {showKnowledge && knowledgeSummary && (
-        <div className="static w-[calc(100%-2rem)] max-w-md mx-auto mt-20 sm:absolute sm:mx-0 sm:left-auto sm:right-8 sm:top-8 sm:w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
+        <div className="static w-[calc(100%-2rem)] max-w-md mx-auto mt-24 mb-6 sm:absolute sm:mx-0 sm:left-auto sm:right-8 sm:top-8 sm:w-96 sm:mb-0 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
           <div className="bg-black/50 backdrop-blur-xl border border-blue-500/30 rounded-2xl p-6 space-y-4 shadow-2xl">
             
             {/* Header */}
@@ -757,7 +757,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
 
       {/* 🌍 COLLECTIVE CONSCIOUSNESS - Global Stats */}
       {collectiveStats && showKnowledge && (
-        <div className="static w-[calc(100%-2rem)] max-w-md mx-auto mt-6 sm:absolute sm:mx-0 sm:left-8 sm:top-8 sm:w-96 max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
+        <div className="static w-[calc(100%-2rem)] max-w-md mx-auto mt-6 mb-24 sm:absolute sm:mx-0 sm:left-8 sm:top-8 sm:w-96 sm:mb-0 max-h-[70vh] sm:max-h-[80vh] overflow-y-auto z-20 animate-fade-in">
           <div className="bg-black/50 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-6 space-y-4 shadow-2xl">
             
             {/* Header */}
@@ -942,7 +942,7 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
       {/* Audio Control */}
       <button
         onClick={toggleAudio}
-        className="absolute top-8 right-8 px-4 py-2 bg-black/40 hover:bg-black/60 text-gray-300 rounded-lg backdrop-blur-sm transition-all duration-300 border border-amber-500/30 hover:border-amber-500/50 text-sm z-40"
+        className="absolute top-4 right-4 sm:top-8 sm:right-8 px-3 py-1.5 sm:px-4 sm:py-2 bg-black/40 hover:bg-black/60 text-gray-300 rounded-lg backdrop-blur-sm transition-all duration-300 border border-amber-500/30 hover:border-amber-500/50 text-xs sm:text-sm z-40"
       >
         {audioEnabled ? '🔊 Mute Sound' : '🔊 Enable Sound'}
       </button>
@@ -956,11 +956,11 @@ function Stage5({ onRestart, savedMemory, onViewGallery }) {
       />
 
       {/* Stage Title - Centered */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-10 text-center">
-        <div className="text-amber-200/90 text-lg md:text-xl font-light tracking-widest">
+      <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 z-10 text-center px-4">
+        <div className="text-amber-200/90 text-sm sm:text-lg md:text-xl font-light tracking-widest">
           STAGE 5: RELEASE
         </div>
-        <div className="text-amber-300/70 text-sm font-light mt-1">
+        <div className="text-amber-300/70 text-xs sm:text-sm font-light mt-1">
           THE FIRST BREATH
         </div>
       </div>
