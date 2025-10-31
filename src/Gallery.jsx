@@ -102,7 +102,7 @@ function Gallery({ onViewProfile, onBackToSimulation }) {
   const categories = ['all', 'philosophy', 'science', 'emotions', 'creativity', 'technology', 'nature', 'society', 'abstract'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white">
+    <div className="fixed inset-0 w-screen h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white overflow-y-auto">
       {/* Header */}
       <div className="relative overflow-hidden">
         {/* Animated background */}
